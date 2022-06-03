@@ -343,7 +343,7 @@
 import ImageList from "./ImageList/ImageList";
 import Zoom from "./Zoom/Zoom";
 import { mapGetters,mapMutations } from "vuex";
-
+// detail  6.4 jin
 export default {
   name: "Detail",
   components: {
