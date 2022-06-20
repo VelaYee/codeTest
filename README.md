@@ -25,3 +25,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # 使用小乌龟提交代码测试
 ##QL-test
+##gitclone-test
