@@ -1,0 +1,58 @@
+app@0.1.0 C:\Users\dell\Desktop\project-SHP\app
+├── _@vue_devtools-api@6.1.4@@vue@ extraneous
+├── _vue-router@4.0.15@vue-router@npm:vue-router@4.0.15 extraneous
+├── _vue@2.6.14@vue@npm:vue@2.6.14 extraneous
+├── _vuex@4.0.2@vuex@npm:vuex@4.0.2 extraneous
+├── @babel/core@7.17.12
+├── @babel/eslint-parser@7.17.0
+├── @vue/cli-plugin-babel@5.0.4
+├── @vue/cli-plugin-eslint@5.0.4
+├── @vue/cli-service@5.0.4
+├── @vue/devtools-api@6.1.4 extraneous -> .\node_modules\_@vue_devtools-api@6.1.4@@vue\devtools-api
+├── async-validator@1.8.5 extraneous -> .\node_modules\_async-validator@1.8.5@async-validator
+├── asynckit@0.4.0 extraneous -> .\node_modules\_asynckit@0.4.0@asynckit
+├── axios@0.27.2 -> .\node_modules\_axios@0.27.2@axios
+├── babel-helper-vue-jsx-merge-props@2.0.3 extraneous -> .\node_modules\_babel-helper-vue-jsx-merge-props@2.0.3@babel-helper-vue-jsx-merge-props
+├── babel-plugin-component@1.1.1 -> .\node_modules\_babel-plugin-component@1.1.1@babel-plugin-component
+├── babel-runtime@6.26.0 extraneous -> .\node_modules\_babel-runtime@6.26.0@babel-runtime
+├── combined-stream@1.0.8 extraneous -> .\node_modules\_combined-stream@1.0.8@combined-stream
+├── copy-anything@2.0.6 extraneous -> .\node_modules\_copy-anything@2.0.6@copy-anything
+├── core-js@3.22.5
+├── decamelize@1.2.0 extraneous -> .\node_modules\_decamelize@1.2.0@decamelize
+├── delayed-stream@1.0.0 extraneous -> .\node_modules\_delayed-stream@1.0.0@delayed-stream
+├── dijkstrajs@1.0.2 extraneous -> .\node_modules\_dijkstrajs@1.0.2@dijkstrajs
+├── dom7@2.1.5 extraneous -> .\node_modules\_dom7@2.1.5@dom7
+├── element-ui@2.15.9 -> .\node_modules\_element-ui@2.15.9@element-ui
+├── encode-utf8@1.0.3 extraneous -> .\node_modules\_encode-utf8@1.0.3@encode-utf8
+├── errno@0.1.8 extraneous -> .\node_modules\_errno@0.1.8@errno
+├── eslint-plugin-vue@8.7.1
+├── eslint@7.32.0
+├── form-data@4.0.0 extraneous -> .\node_modules\_form-data@4.0.0@form-data
+├── image-size@0.5.5 extraneous -> .\node_modules\_image-size@0.5.5@image-size
+├── is-what@3.14.1 extraneous -> .\node_modules\_is-what@3.14.1@is-what
+├── less-loader@5.0.0 -> .\node_modules\_less-loader@5.0.0@less-loader
+├── less@4.1.2 -> .\node_modules\_less@4.1.2@less
+├── mockjs@1.1.0 -> .\node_modules\_mockjs@1.1.0@mockjs
+├── needle@2.9.1 extraneous -> .\node_modules\_needle@2.9.1@needle
+├── normalize-wheel@1.0.1 extraneous -> .\node_modules\_normalize-wheel@1.0.1@normalize-wheel
+├── nprogress@0.2.0 -> .\node_modules\_nprogress@0.2.0@nprogress
+├── parse-node-version@1.0.1 extraneous -> .\node_modules\_parse-node-version@1.0.1@parse-node-version
+├── pify@4.0.1 extraneous -> .\node_modules\_pify@4.0.1@pify
+├── pngjs@5.0.0 extraneous -> .\node_modules\_pngjs@5.0.0@pngjs
+├── prr@1.0.1 extraneous -> .\node_modules\_prr@1.0.1@prr
+├── qrcode@1.5.0 -> .\node_modules\_qrcode@1.5.0@qrcode
+├── require-main-filename@2.0.0 extraneous -> .\node_modules\_require-main-filename@2.0.0@require-main-filename
+├── resize-observer-polyfill@1.5.1 extraneous -> .\node_modules\_resize-observer-polyfill@1.5.1@resize-observer-polyfill
+├── sax@1.2.4 extraneous -> .\node_modules\_sax@1.2.4@sax
+├── set-blocking@2.0.0 extraneous -> .\node_modules\_set-blocking@2.0.0@set-blocking
+├── ssr-window@2.0.0 extraneous -> .\node_modules\_ssr-window@2.0.0@ssr-window
+├── swiper@5.4.5 -> .\node_modules\_swiper@5.4.5@swiper
+├── throttle-debounce@1.1.0 extraneous -> .\node_modules\_throttle-debounce@1.1.0@throttle-debounce
+├── vee-validate@2.2.15 -> .\node_modules\_vee-validate@2.2.15@vee-validate
+├── vue-lazyload@3.0.0-rc.2 -> .\node_modules\_vue-lazyload@3.0.0-rc.2@vue-lazyload
+├── vue-router@3.2.0 -> .\node_modules\_vue-router@3.2.0@vue-router
+├── vue-template-compiler@2.6.14
+├── vue@2.6.14
+├── vuex@3.6.2 -> .\node_modules\_vuex@3.6.2@vuex
+└── which-module@2.0.0 extraneous -> .\node_modules\_which-module@2.0.0@which-module
+

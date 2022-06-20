@@ -57,7 +57,8 @@
                 <div class="fixWidth">
                   <i class="red-bg">加价购</i>
                   <em class="t-gray"
-                    >满999.00另加20.00元，或满1999.00另加30.00元，或满2999.00另加40.00元，即可在购物车换购热销商品</em>
+                    >满999.00另加20.00元，或满1999.00另加30.00元，或满2999.00另加40.00元，即可在购物车换购热销商品</em
+                  >
                 </div>
               </div>
             </div>
@@ -77,18 +78,22 @@
             </div>
           </div>
 
-          <h1 :class="{active1: a == 1}">111</h1>
-          <button @click="change(a)">点击</button>
-
           <div class="choose">
             <div class="chooseArea">
               <div class="choosed"></div>
-              <dl v-for="(spuSaleAttr,index1) in spuSaleAttrList" :key="spuSaleAttr.id">
+              <dl
+                v-for="(spuSaleAttr, index1) in spuSaleAttrList"
+                :key="spuSaleAttr.id"
+              >
                 <dt class="title">{{ spuSaleAttr.saleAttrName }}</dt>
                 <dd
-                  changepirce="0" :class="{ active: spuSaleAttrValue.isChecked == 1 }"
-                  v-for="(spuSaleAttrValue,index2) in spuSaleAttr.spuSaleAttrValueList" :key="spuSaleAttrValue.id"
-                  @click="changeActive(index1,index2)"
+                  changepirce="0"
+                  :class="{ active: spuSaleAttrValue.isChecked == 1 }"
+                  v-for="(
+                    spuSaleAttrValue, index2
+                  ) in spuSaleAttr.spuSaleAttrValueList"
+                  :key="spuSaleAttrValue.id"
+                  @click="changeActive(index1, index2)"
                 >
                   {{ spuSaleAttrValue.saleAttrValueName }}
                 </dd>
@@ -96,12 +101,22 @@
             </div>
             <div class="cartWrap">
               <div class="controls">
-                <input autocomplete="off" class="itxt" />
-                <a href="javascript:" class="plus">+</a>
-                <a href="javascript:" class="mins">-</a>
+                <input
+                  autocomplete="off"
+                  class="itxt"
+                  v-model="skuNum"
+                  @change="changeskuNum"
+                />
+                <a href="javascript:" class="plus" @click="skuNum++">+</a>
+                <a
+                  href="javascript:"
+                  class="mins"
+                  @click="skuNum > 1 ? skuNum-- : (skuNum = 1)"
+                  >-</a
+                >
               </div>
               <div class="add">
-                <a href="javascript:">加入购物车</a>
+                <a @click="addShopCart()">加入购物车</a>
               </div>
             </div>
           </div>
@@ -342,31 +357,64 @@
 <script>
 import ImageList from "./ImageList/ImageList";
 import Zoom from "./Zoom/Zoom";
-import { mapGetters,mapMutations } from "vuex";
-// detail  6.4 jin
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
   name: "Detail",
   components: {
     ImageList,
     Zoom,
   },
+  data() {
+    return {
+      skuNum: 1,
+    };
+  },
   mounted() {
     this.$store.dispatch("getGoodInfo", this.$route.params.skuId);
   },
   computed: {
     ...mapGetters(["categoryView", "skuInfo", "spuSaleAttrList"]),
-    ...mapMutations(['setSelected']),
     skuImageList() {
       return this.skuInfo.skuImageList || [];
     },
   },
   methods: {
-    changeActive(index1,index2){
-     this.spuSaleAttrList[index1].spuSaleAttrValueList.forEach(item => {
-       item.isChecked='0'
-     });
-     this.spuSaleAttrList[index1].spuSaleAttrValueList[index2].isChecked=1
-    }
+    changeActive(index1, index2) {
+      this.spuSaleAttrList[index1].spuSaleAttrValueList.forEach((item) => {
+        item.isChecked = "0";
+      });
+      this.spuSaleAttrList[index1].spuSaleAttrValueList[index2].isChecked = 1;
+    },
+    changeskuNum(event) {
+      let value = event.target.value * 1;
+      if (isNaN(value) || value < 1) {
+        this.skuNum = 1;
+      } else {
+        this.skuNum = parseInt(value);
+      }
+    },
+    async addShopCart() {
+      // 1. 发请求-将产品加入到数据库（通知服务器）
+      // 2. 服务器存储成功-进行路由跳转传递参数
+      // 3. 失败-给用户进行提示
+      try {
+        let result = await this.$store.dispatch("addOrUpdateShopCart", {
+          skuId: this.$route.params.skuId,
+          skuNum: this.skuNum,
+        });
+        // sessionStorage内只存字符串形式的 因此传递对象时要使用JSON先转换 接收时再用JSON转回来
+        // JSON的使用场景有哪些？？？
+        let reSkuInfo=JSON.stringify(this.skuInfo)
+        sessionStorage.setItem("SKUINFO",reSkuInfo)
+        this.$router.push({
+          name:'addcartsuccess',
+          query:{skuNum:this.skuNum}
+        })
+      } catch (error) {
+        alert(error.message)
+      }
+    },
   },
 };
 </script>
@@ -865,7 +913,7 @@ export default {
     }
   }
 }
-.active1{
+.active1 {
   background-color: pink;
 }
 </style>

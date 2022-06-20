@@ -5,9 +5,8 @@
     <Recommed />
     <Rank />
     <Like />
-    <Floor v-for="floor in floorList" :key="floor.id" :list="floor"/>
+    <Floor v-for="floor in floorList" :key="floor.id" :list="floor" />
     <Brand />
-
   </div>
 </template>
 
@@ -18,7 +17,7 @@ import Rank from "@/pages/Home/Rank";
 import Like from "@/pages/Home/Like";
 import Floor from "@/pages/Home/Floor";
 import Brand from "@/pages/Home/Brand";
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 // 1111
 export default {
   name: "",
@@ -28,16 +27,24 @@ export default {
     Rank,
     Like,
     Floor,
-    Brand
+    Brand,
   },
   mounted() {
-    this.$store.dispatch('getFloorList')
+    // console.log('mounted');
+    this.$store.dispatch("getFloorList");
+    this.$store.dispatch('getUserInfo')
   },
-  computed:{
+/*   beforeUpdate() {
+    console.log('beforeUpdate');
+  },
+  updated() {
+    console.log('updated');
+  }, */
+  computed: {
     ...mapState({
-      floorList:state=>state.home.floorList
-    })
-  }
+      floorList: (state) => state.home.floorList,
+    }),
+  },
 };
 </script>
 
